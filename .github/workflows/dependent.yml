@@ -1,4 +1,4 @@
-name: Release
+name: Release 2.0
 
 on:
   workflow_run:
@@ -7,16 +7,29 @@ on:
     types: 
       - completed
 
+# jobs:
+#   test:
+#     name: Test
+#     runs-on: linux
+#     steps:
+#     - name: Set up Go 1.x
+#       uses: actions/setup-go@v2
+#       with:
+#         go-version: ^1.16
+#       id: go
+
+
+
 jobs:
-  test:
-    name: Test
-    runs-on: linux
+  test-job:
+    name: Test Step
+    runs-on: ubuntu-latest
     steps:
-    - name: Set up Go 1.x
-      uses: actions/setup-go@v2
-      with:
-        go-version: ^1.16
-      id: go
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - run: git branch
+      - run: env
 
 
 # added comment
