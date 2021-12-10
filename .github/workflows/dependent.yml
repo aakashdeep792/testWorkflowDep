@@ -10,7 +10,7 @@ on:
 jobs:
   test:
     name: Test
-    runs-on: [linux]
+    runs-on: linux
     steps:
     - name: Set up Go 1.x
       uses: actions/setup-go@v2
