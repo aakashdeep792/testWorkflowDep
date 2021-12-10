@@ -3,7 +3,7 @@ name: Release 2.0
 on:
   workflow_run:
     workflows: ["Run Tests"]
-    branches: [development]
+#     branches: [development]
     types: 
       - completed
 
